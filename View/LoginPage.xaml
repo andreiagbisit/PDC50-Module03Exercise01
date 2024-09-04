@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Module02Exercise01.View.LoginPage"
+             Title="LoginPage"
+             BackgroundColor="{DynamicResource PrimaryColor}">
+    <VerticalStackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+
+        <Image
+            Source="employees.png"
+            HeightRequest="200"
+            Aspect="AspectFit"/>
+
+        <Label Text="" HeightRequest="50"/>
+
+        <Label 
+            Text="Welcome to the Employee Management System!"
+            FontSize="32"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            TextColor="{DynamicResource SecondaryColor}"
+            FontFamily="{DynamicResource PrimaryFontFamily}"/>
+
+        <Label Text="" HeightRequest="50"/>
+        
+        <Entry x:Name="email"
+               Placeholder="Email"
+               TextColor="Black"
+               BackgroundColor="White"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               WidthRequest="250"/>
+        
+        <Label Text="" HeightRequest="10"/>
+        
+        <Entry x:Name="password"
+               Placeholder="Password"
+               TextColor="Black"
+               IsPassword="True"
+               BackgroundColor="White"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               WidthRequest="250"/>
+
+        <Label Text="" HeightRequest="10"/>
+
+        <Button Text="Login"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            TextColor="{DynamicResource SecondaryColor}"
+            FontFamily="{DynamicResource PrimaryFontFamily}"
+            WidthRequest="100"
+            Clicked="OnLoginButtonClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

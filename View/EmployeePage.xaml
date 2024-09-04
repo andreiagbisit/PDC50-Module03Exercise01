@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Module02Exercise01.View.EmployeePage"
+             Title="EmployeePage" BackgroundColor="DarkBlue">
+    <VerticalStackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+
+        <Label Text="{Binding FullName}" FontSize="20"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+        
+        <Label Text="{Binding Status}" FontSize="15"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+
+        <Label Text="" HeightRequest="20"/>
+        
+        <!-- Button bound to LoadEmployeeDataCommand-->
+        <Button Text="Display Manager"
+                WidthRequest="150"
+                Command="{Binding LoadEmployeeDataCommand}"/> &#10;
+
+        <Label Text="" HeightRequest="20"/>
+
+        <Border Stroke="#000"
+            StrokeThickness="4"
+            Background="#000"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="300">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+
+            <ListView ItemsSource="{Binding Employees}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="5">
+                                <!-- Employee Name and Status -->
+                                <StackLayout Orientation="Vertical"
+                                             Padding="10" Spacing="10">
+                                    <Label Text="{Binding FullNames}" 
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       WidthRequest="200"/>
+                                    <Label Text="{Binding Status}" 
+                                       TextColor="White"
+                                       WidthRequest="200"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Border>
+
+    </VerticalStackLayout>
+</ContentPage>
